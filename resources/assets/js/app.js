@@ -9,14 +9,28 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+// VUEX
+import Vuex from 'vuex'
+Vue.use(Vuex);
+
+
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+// Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('product-card', require('./components/ProductCard.vue'));
+Vue.component('product-grid', require('./components/ProductGrid.vue'));
+
+import store from './store';
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    store: store, // or just store
+    created() {
+        this.$store.dispatch('loadProducts',null);
+    },
 });
