@@ -9,10 +9,10 @@
         <div class="card-body">
             <h5 class="card-title">  {{ product.title }} </h5>
             <p class="card-text">
-                {{product.description}}
+                {{product.description.substring(0,100) }} ...
             </p>
             <p>
-                {{ product.price | money }} &nbsp; - &nbsp;
+                {{ product.price  }} &nbsp; - &nbsp;
                 Stock: {{product.inventory}}
             </p>
 
@@ -20,7 +20,7 @@
 
             <a href="#" class="btn btn-primary"
                v-if="product.inventory > 0"
-               @click.native="addToCart(product)"
+               @click="addToCart(product)"
             >Add to Cart</a>
 
             <button class="btn btn-primary disabled"

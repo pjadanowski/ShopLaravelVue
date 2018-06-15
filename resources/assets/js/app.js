@@ -14,16 +14,30 @@ import Vuex from 'vuex'
 Vue.use(Vuex);
 
 
+Vue.filter('money', (value) => {
+    function reverse(str) {
+        return str.split('').reverse().join('');
+    }
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+    function num2str(num) {
+        var str = num+"";
+        return reverse(reverse(str).replace(/\d{3}/g,'$&,').replace(/\,$/,''));
+    }
+
+    const ds = (num2str(value / 100)+'.00').split('.');
+
+    return '$' + ds[0] + '.' + (ds[1]+'00').substring(0,2);
+})
+
+
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('product-card', require('./components/ProductCard.vue'));
 Vue.component('product-grid', require('./components/ProductGrid.vue'));
+
+Vue.component('shopping-cart', require('./components/ShoppingCart.vue'));
+Vue.component('shopping-cart-totals', require('./components/ShoppingCartTotals.vue'));
+
 
 import store from './store';
 

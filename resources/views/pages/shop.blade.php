@@ -6,8 +6,11 @@
 
 
 @section('content')
+    <shopping-cart></shopping-cart>
+
     <div class="container">
         <h1>Shop</h1>
+
 
 
         <product-grid></product-grid>

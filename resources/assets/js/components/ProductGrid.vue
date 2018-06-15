@@ -10,14 +10,11 @@
 
         <div class="row">
 
-            <div class="col-4"
+            <div class="col-md-4 col-sm-12"
                 v-for="item in filteredProducts"
                 :key="item.id">
 
-                <product-card
-                     :product="item"
-                >
-                </product-card>
+                <product-card :product="item"></product-card>
 
             </div>
 
