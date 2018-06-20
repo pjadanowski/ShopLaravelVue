@@ -5,19 +5,21 @@
       <tbody>
         <tr>
           <td>Subtotal ({{ item_count }} items):</td>
-          <td class="text-xs-right">{{ subtotal  }}</td>
+          <td class="text-xs-right">{{ subtotal | currency }}</td>
         </tr>
         <tr>
           <td>Shipping:</td>
-          <td class="text-xs-right">{{ shipping  }}</td>
+          <td class="text-xs-right">{{ shipping | currency }}</td>
         </tr>
         <tr>
           <td>Taxes:</td>
-          <td class="text-xs-right">{{ taxes }}</td>
+          <td class="text-xs-right">{{ taxes | currency }}</td>
         </tr>
         <tr>
           <td><strong>Grand Total:</strong></td>
-          <td class="text-xs-right"><strong>{{ grand_total }}</strong></td>
+          <td class="text-xs-right"><strong>
+            {{ grand_total | currency('zł', 2, {symbolOnLeft: false, decimalSeparator: ',', spaceBetweenAmountAndSymbol: true }) }}
+          </strong></td>
         </tr>
 
       </tbody>

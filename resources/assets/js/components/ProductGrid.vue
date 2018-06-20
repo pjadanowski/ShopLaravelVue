@@ -42,7 +42,7 @@
             filteredProducts() {
                 return this.products.filter((product) => {
                     return (! this.filter.length )
-                        || product.title.toLowerCase()
+                        || product.name.toLowerCase()
                             .includes(this.filter.toLowerCase())
                         || product.description.toLowerCase()
                             .includes(this.filter.toLowerCase());

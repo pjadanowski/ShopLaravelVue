@@ -13,6 +13,10 @@ window.Vue = require('vue');
 import Vuex from 'vuex'
 Vue.use(Vuex);
 
+// VUE FILTERS
+import Vue2Filters from 'vue2-filters'
+Vue.use(Vue2Filters);
+
 
 Vue.filter('money', (value) => {
     function reverse(str) {

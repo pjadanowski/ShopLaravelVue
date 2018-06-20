@@ -7,12 +7,12 @@
                 <li class="media" v-for="item in items">
                     <img class="mr-3"
                          :src="item.image"
-                         :key="item.title"
+                         :key="item.name"
                          :height="50"
                     >
 
                     <div class="media-body">
-                        <h5 class="mt-0 mb-1">{{ item.title }}</h5>
+                        <h5 class="mt-0 mb-1">{{ item.name }}</h5>
                         Quantity: {{ item.quantity }} &nbsp; - &nbsp;{{ item.price  }}
 
 

@@ -19,3 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::resource('products', Api\ProductController::class);
+
+
+// -------------- CART ----------------------------
+Route::post('/add-to-cart', 'Api\CartController@addToCart');
